@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 arr1 = [{id:1,item:'apple',type:'fruit'},
         {id:2,item:'banana',type:'fruit'},
         {id:3,item:'pen',type:'stuff'},
@@ -15,6 +17,11 @@ function filter(array, type)
     return array.filter((a)=> a.type===type);
 }
 
-console.log(filter(arr1,'stuff'));
+function last(array)
+{
+    return _.takeRight(array,1);
+}
+
+console.log(last(arr1));
 
 
