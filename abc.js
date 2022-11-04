@@ -11,6 +11,8 @@ async function main(){
     if (data) {
         hideloader();
     }
+    show(data);
+    delete1(data.id,data)
 }
 main();
 
@@ -28,14 +30,24 @@ function show(data) {
          </tr>`;
     
     // Loop to access all rows 
-    array.forEach(r => {
+    for (let r of data.data) {
         tab += `<tr> 
         <td>${r.id} </td>
         <td>${r.name}</td>
         <td>${r.phone}</td> 
-        <td>${r.username}</td>          
+        <td>${r.username}</td>
+        <td><a href="" onclick="edit">Edit</a></td>
+        <td><a href="" onclick="delete1(data.id)">Delete</a></td>
     </tr>`;
-    }); 
+    }; 
     // Setting innerHTML as tab variable
     document.getElementById("users").innerHTML = tab;
 }
+
+function delete1(id,data){
+    for (var i = 0, l = data.length; i < l; i++) 
+        if (data[i].id == id) {
+         delete(data);
+        }
+}
+
