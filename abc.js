@@ -12,7 +12,7 @@ async function main(){
         hideloader();
     }
     show(data);
-    delete1(data.id,data)
+    add(id,name,phone,username);
 }
 main();
 
@@ -51,3 +51,14 @@ function delete1(id,data){
         }
 }
 
+function add(id,name,phone,username)
+{
+    const node = document.createElement("tr")
+                document.createElement("td")
+    let tab = document.createTextNode(`${id}`)
+            document.createTextNode(`${name}`)
+            document.createTextNode(`${phone}`)
+            document.createTextNode(`${username}`);
+    node.appendChild(tab);
+    document.getElementById("users").appendChild(node);
+}
